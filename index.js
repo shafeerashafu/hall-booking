@@ -19,7 +19,6 @@ app.post('/rooms', (req, res) => {
     };
     rooms.push(newRoom);
     res.json({ message: 'Room created successfully', room: newRoom });
-
 });
 
 // 2) Booking a Room
@@ -35,13 +34,7 @@ app.post('/bookings', (req, res) => {
         return res.status(400).json({ message: 'Room is already booked' });
     }
 
-    const conflictingBooking = bookings.find(booking => booking.roomId === roomId && booking.date === date &&
-        ((startTime >= booking.startTime && startTime < booking.endTime) || (endTime > booking.startTime && endTime <= booking.endTime)));
-
-    if (conflictingBooking) {
-        return res.status(400).json({ message: 'Room already booked for the given date and time' });
-    }
-   
+    
 
     const newBooking = {
         bookingId: bookings.length + 1,
@@ -49,7 +42,9 @@ app.post('/bookings', (req, res) => {
         date,
         startTime,
         endTime,
-        roomId
+        roomId,
+        bookingDate: new Date(),
+        bookingStatus: 'Confirmed'
     };
     room.booked = true;
     room.bookings.push(newBooking);
@@ -103,6 +98,6 @@ app.get('/customers/:customerName/bookings', (req, res) => {
     res.json(customerBookings);
 });
 
-app.listen(4000, () => {
-    console.log('Server is running on port 4000');
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 });

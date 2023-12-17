@@ -1,8 +1,8 @@
  1) Creating a Room
 
- API : http://localhost:4000/rooms
+ local API : http://localhost:3000/rooms
 
- Render API
+ render API : 
 
  Method : POST
 
@@ -34,36 +34,44 @@ Example body of response (200) :
 
 2) Booking a Room
 
-API : http://localhost:4000/bookings
+local API : http://localhost:3000/bookings
+
+render API : 
 
 Method : POST
 
  Example body of request : 
- {
-    "bookingId": 111,
+{
+    "bookingId": 1,
     "customerName": "Sam",
     "date": "14/12/2023",
     "startTime": "10:00 AM",
     "endTime": "03:00 PM",
-    "roomId": 1
-}
+    "roomId": 1,
+    "bookingDate": "new Date()",
+    "bookingStatus":"Confirmed"
 
+}
 Example body of response (200) :
 {
     "message": "Room booked successfully",
     "booking": {
-        "bookingId": 1,
+        "bookingId": 3,
         "customerName": "Sam",
         "date": "14/12/2023",
         "startTime": "10:00 AM",
         "endTime": "03:00 PM",
-        "roomId": 1
+        "roomId": 1,
+        "bookingDate": "2023-12-17T09:38:48.170Z",
+        "bookingStatus": "Confirmed"
     }
 }
 
 3) List all Rooms with booked data
 
-API : http://localhost:4000/rooms/bookings
+local API : http://localhost:3000/rooms/bookings
+
+render API : 
 
 Method : GET
 
@@ -109,7 +117,9 @@ Example body of response (200) :
 
 4) List all customers with booked data
 
-API : http://localhost:4000/customers/bookings
+local API : http://localhost:3000/customers/bookings
+
+render API : 
 
 Method : GET
 
@@ -140,10 +150,12 @@ Example body of response (200) :
 
 5) List how many times a customer has booked a room
 
-API : http://localhost:4000/customers/Ram/bookings  (path params)
+local API : http://localhost:3000/customers/Ram/bookings  (path params)
+
+render API : 
 
 Method : GET
-hello
+
 Example body of response (200) :
 [
     {
