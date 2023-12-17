@@ -1,8 +1,12 @@
+
+ 
+ 
+ 
  1) Creating a Room
 
  local API : http://localhost:3000/rooms
 
- render API : 
+ render API : https://hall-booking-bb8n.onrender.com/rooms
 
  Method : POST
 
@@ -36,7 +40,7 @@ Example body of response (200) :
 
 local API : http://localhost:3000/bookings
 
-render API : 
+render API : https://hall-booking-bb8n.onrender.com/bookings
 
 Method : POST
 
@@ -71,7 +75,7 @@ Example body of response (200) :
 
 local API : http://localhost:3000/rooms/bookings
 
-render API : 
+render API : https://hall-booking-bb8n.onrender.com/rooms/bookings
 
 Method : GET
 
@@ -119,7 +123,7 @@ Example body of response (200) :
 
 local API : http://localhost:3000/customers/bookings
 
-render API : 
+render API : https://hall-booking-bb8n.onrender.com/customers/bookings
 
 Method : GET
 
@@ -152,7 +156,7 @@ Example body of response (200) :
 
 local API : http://localhost:3000/customers/Ram/bookings  (path params)
 
-render API : 
+render API : https://hall-booking-bb8n.onrender.com/customers/Ram/bookings
 
 Method : GET
 
