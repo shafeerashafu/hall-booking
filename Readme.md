@@ -143,7 +143,7 @@ Example body of response (200) :
 API : http://localhost:4000/customers/Ram/bookings  (path params)
 
 Method : GET
-
+hello
 Example body of response (200) :
 [
     {
